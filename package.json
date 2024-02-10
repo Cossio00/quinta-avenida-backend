@@ -1,0 +1,22 @@
+{
+  "name": "quinta-avenida",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cossio00/quinta-avenida-backend.git"
+  },
+  "author": "Vinícius Cossio de Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cossio00/quinta-avenida-backend/issues"
+  },
+  "homepage": "https://github.com/Cossio00/quinta-avenida-backend#readme",
+  "dependencies": {
+    "node": "^21.6.1"
+  }
+}
