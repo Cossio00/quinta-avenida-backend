@@ -9,5 +9,5 @@ app.use(express.json());
 app.use(cors());
 
 app.listen(port, () => {
-    console.log(`A API está rodando na porta: ${port}`)
+    console.log(`API running on port: ${port}`)
 })
