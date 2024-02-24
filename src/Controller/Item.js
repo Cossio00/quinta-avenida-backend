@@ -32,7 +32,7 @@ async function updateItem(req, res){
     const item = new Item(req.body);
     const itemId = req.params['id'];
     item.setId(itemId);
-
+    
     sql = `UPDATE item
             SET nome = '${item.getNome()}', preco = ${item.getPreco()}
             WHERE id = '${item.getId()}'`;
@@ -47,5 +47,20 @@ async function updateItem(req, res){
 }
 
 
+async function deleteItem(req, res){
+    const itemId = req.params['id'];
+    
+    sql = `DELETE FROM item
+            WHERE id = '${itemId}'`;
+    
+    try{
+        await db.query(sql);
+    }catch(err){
+        res.status(404).json({message: 'ERROR'});
+    }finally{
+        res.status(202).json({message: 'ITEM_DELETED_SUCCESSFULLY'});
+    }  
+}
 
-module.exports = { getItem, createItem, updateItem }
+
+module.exports = { getItem, createItem, updateItem, deleteItem }
