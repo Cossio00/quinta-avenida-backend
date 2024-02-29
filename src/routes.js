@@ -4,7 +4,7 @@ const router = Router();
 
 const { getItem, createItem, updateItem, deleteItem } = require('./Controller/Item');
 const { getComanda, createComanda, updateComanda, deleteComanda } = require('./Controller/Comanda');
-
+const { getItemComanda, createItemComanda} = require('./Controller/ItemComanda');
 
 
 //      --------    ITEM
@@ -75,5 +75,25 @@ router.delete('/comanda/:id', async function(req, res){
         console.error('Erro ao remover comanda: ', err.message);
     }
 })
+
+//      --------    ITEMCOMANDA
+
+router.get('/item-comanda', async function(req, res){
+    try{
+        res.json(await getItemComanda(req, res));
+    }catch(err){
+        console.error('Erro ao obter itens das comandas: ', err.message);
+    }
+})
+
+router.post('/item-comanda/:id_comanda', async function(req, res){
+    try{
+        res.json(await createItemComanda(req, res));
+    }catch(err){
+        console.error('Erro ao obter criar item das comandas: ', err.message);
+        
+    }
+})
+
 
 module.exports = router;
